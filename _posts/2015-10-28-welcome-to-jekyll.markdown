@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to CS423!"
 date:   2015-10-28 14:30:30
 categories: jekyll update
 ---
