@@ -3,8 +3,7 @@ title: "CS423: Networks"
 email: cs423.nuig@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Network Science is the study of network representations of physical, 
-  biological, and social phenomena leading to predictive models of 
-  these phenomena.
+  biological, and social phenomena.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://schmidt.nuigalway.ie" # the base hostname & protocol for your site
 #twitter_username: jekyllrb

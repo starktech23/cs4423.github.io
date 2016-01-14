@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Welcome to CS423!"
+date:   2016-01-01 09:30:00
+categories: welcome
+---
+
+# Welcome to CS423
+
+This is the repository for (some) lecture notes
+from the course.  Feel free to add your thoughts
+and further material through comments
+or through pull requests on github.
