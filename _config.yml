@@ -9,6 +9,7 @@ url: "http://schmidt.nuigalway.ie" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username:  cs423
 disqus: cs423
+google_analytics: UA-72475442-1
 
 # Build settings
 markdown: kramdown
