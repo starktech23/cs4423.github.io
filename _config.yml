@@ -13,3 +13,14 @@ google_analytics: UA-72475442-1
 
 # Build settings
 markdown: kramdown
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      author: CS423
+      layout: post
+      category: notes
