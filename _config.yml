@@ -13,6 +13,7 @@ google_analytics: UA-72475442-1
 
 # Build settings
 markdown: kramdown
+future: true
 
 # Default values
 defaults:
@@ -21,6 +22,6 @@ defaults:
       path: ""
       type: posts
     values:
-      author: CS423
+      author: "Götz Pfeiffer"
       layout: post
       category: notes
