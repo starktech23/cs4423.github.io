@@ -13,12 +13,23 @@
         </svg>
       </a>
 
+      <div>
       <div class="trigger">
         {% for page in site.pages %}
-          {% if page.title %}
+          {% if page.title and page.sitemap %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
+      </div>
+      <div id="searchBar">
+      <div id="search">
+        <form role="search" method="get" action="{{site.baseurl}}/search/">
+          <input id="searchString" name="searchString"
+                 placeholder="equilibrium ..." type="text">
+          <input id="searchButton" name="cs423.github.io" type="submit" value="Search">
+        </form>
+      </div>
+      </div>
       </div>
     </nav>
 
