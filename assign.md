@@ -2,7 +2,6 @@
 layout: page
 title: Assignments
 permalink: /assign/
-sitemap: true
 ---
 
 **Assignment 1.** ([pdf](/assets/assign1.pdf)). Deadline: Thursday, February 11, 5pm.
