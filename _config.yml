@@ -12,7 +12,7 @@ disqus: cs423
 google_analytics: UA-72475442-1
 
 # permalinks
-permalink: "/:year/:month/:day/"
+permalink: "notes/:year/:month/:day/:title.html"
 
 # Build settings
 markdown: kramdown
