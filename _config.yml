@@ -11,6 +11,9 @@ github_username:  cs423
 disqus: cs423
 google_analytics: UA-72475442-1
 
+# permalinks
+permalink: "/:year/:month/:day/"
+
 # Build settings
 markdown: kramdown
 future: true

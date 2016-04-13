@@ -9,6 +9,8 @@ comments: true
     <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
 
+  <h2 class="post-content">{{ page.category }}</h2>
+  
   <article class="post-content">
     {{ content }}
     <div class="page-nav">
