@@ -9,7 +9,7 @@ url: "http://cs4423.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username:  cs4423
 disqus: cs4423
-google_analytics: UA-72475442-1
+google_analytics: UA-89969627-1
 
 # permalinks
 permalink: "notes/:year/:month/:day/:title.html"
@@ -21,7 +21,7 @@ future: true
 # Additional gems
 gems:
   - jekyll-sitemap
-  
+
 # Default values
 defaults:
   -
