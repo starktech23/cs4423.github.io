@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Welcome
+title: About
 permalink: /about/
 ---
 
@@ -30,5 +30,25 @@ This website serves as the repository for (some) lecture notes
 from the course.  Feel free to add your thoughts
 and further material through comments
 or through pull requests on [github](https://github.com/cs423/cs423.github.io).
+
+## Bibliography
+
+* David Easley and Jon Kleinberg:
+*Networks, Crowds and Markets*,
+Cambridge University Press 2010.
+
+* Mark Newman:
+*Networks: an Introduction*,
+Oxford University Press 2010.
+
+* Ernesto Estrada and Philip A. Knight:
+*A first course in network theory*
+Oxford University Press 2015.
+
+* Albert-László Barabási:
+*Network Science*,
+Cambridge University Press 2016.
+
+
 
 [Networks, Crowds and Markets]: https://www.cs.cornell.edu/home/kleinber/networks-book/
