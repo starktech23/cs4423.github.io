@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+
+\usepackage{tikz}
+\tikzset{every node/.style={draw=none,minimum size=2mm,inner sep=0pt}}
+
+\begin{document}
+    \begin{tikzpicture}[scale=1]
+      \node (1) at (4,-1) {$\bullet$};
+      \node (2) at (3,-1) {$\bullet$};
+      \node (3) at (2,-1) {$\bullet$};
+      \node (4) at (1,-1) {$\bullet$};
+      \node (5) at (0,-1) {$\bullet$};
+      \node (v) at (4,1) {$\circ$};
+      \node (w) at (3,1) {$\circ$};
+      \node (x) at (2,1) {$\circ$};
+      \node (y) at (1,1) {$\circ$};
+      \node (z) at (0,1) {$\circ$};
+
+\foreach \a/\b in {1/v,1/w,2/v,2/x,2/y,3/y,4/y,5/y,5/z}
+  \draw (\a) -- (\b);
+    \end{tikzpicture}
+\end{document}
