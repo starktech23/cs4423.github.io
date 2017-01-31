@@ -1,0 +1,32 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+
+\usepackage{tikz}
+%\tikzset{every node/.style={draw=none,minimum size=2mm,inner sep=0pt}}
+\tikzset{every node/.style={circle,draw,minimum size=6mm,inner sep=0pt}}
+
+\begin{document}
+    \begin{tikzpicture}[scale=1.2]
+      \node (A) at (0,4) {$A$};
+      \node (B) at (-1.5,3) {$B$};
+      \node (C) at (-0.5,3) {$C$};
+      \node (D) at (0.5,3) {$D$};
+      \node (E) at (1.5,3) {$E$};
+      \node (F) at (-1,2) {$F$};
+      \node (G) at (0,2) {$G$};
+      \node (H) at (1,2) {$H$};
+      \node (I) at (-0.5,1) {$I$};
+      \node (J) at (0.5,1) {$J$};
+      \node (K) at (0,0) {$K$};
+
+      \draw (D) -- (H) -- (E) -- (A) --(B) -- (F) -- (C) -- (A) -- (D) -- (G) -- (J) -- (H);
+      \draw (J) -- (K) -- (I) -- (F);
+      \draw (I) -- (G);
+      \draw (B) -- (C);
+
+      \draw[very thick,blue] (E) -- (A) -- (B) -- (F) -- (I) -- (K);
+      \draw[very thick,blue] (C) -- (A) -- (D) -- (H);
+      \draw[very thick,blue] (D) -- (G) -- (J);
+    \end{tikzpicture}
+\end{document}
