@@ -1,0 +1,25 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+
+\usepackage{tikz}
+\tikzset{every node/.style={circle,draw,minimum size=6mm,inner sep=0pt}}
+
+\begin{document}
+    \begin{tikzpicture}[scale=1.2]
+      \node (A) at (-1,2) {$A$}; 
+      \node (B) at (1,2) {$B$}; 
+      \node (C) at (-3,2) {$C$}; 
+      \node (D) at (-3,0) {$D$}; 
+      \node (E) at (-1,0) {$E$}; 
+      \node (I) at (3,2) {$I$};
+      \node (L) at (3,0) {$L$};
+      \node (M) at (1,0) {$M$};
+
+      \draw (A) -- (B);
+      \draw (D) -- (C);
+      \draw (A) -- (E) -- (D) -- (A) -- (C) -- (E);
+      \draw (L) -- (I);
+      \draw (B) -- (M) -- (L) -- (B) -- (I) -- (M);
+    \end{tikzpicture}
+\end{document}

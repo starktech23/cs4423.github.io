@@ -1,0 +1,29 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+
+\usepackage{tikz}
+\tikzset{every node/.style={circle,draw,minimum size=6mm,inner sep=0pt}}
+\tikzset{s/.style = {draw=none,minimum size=2mm}}
+\begin{document}
+    \begin{tikzpicture}[scale=1.2]
+      \node (A) at (-1,2) {$A$}; 
+      \node (B) at (1,2) {$B$}; 
+      \node (C) at (-3,2) {$C$}; 
+      \node (D) at (-3,0) {$D$}; 
+      \node (E) at (-1,0) {$E$}; 
+      \node (F) at (-2,3.5) {$F$};
+      \node (G) at (0,5) {$G$};
+      \node (H) at (2,3.5) {$H$};
+      \node (I) at (3,2) {$I$};
+      \node (J) at (-2,5) {$J$};
+      \node (K) at (2,5) {$K$};
+      \node (L) at (3,0) {$L$};
+      \node (M) at (1,0) {$M$};
+
+      \draw (A) -- (B);
+      \draw (D) -- node[s,left] {$s$} (C) -- (F) -- (A) -- node[s,left] {$s$} (E) -- (D) -- node[s,above left,pos=0.75] {$s$} (A) -- node[s,above] {$s$} (C) -- node[s,above right,pos=0.25] {$s$} (E);
+      \draw (L) -- node[s,left] {$s$} (I) -- (H) -- (B) -- node[s,left] {$s$} (M) -- (L) -- node[s,above right,pos=0.75] {$s$} (B) -- node[s,above] {$s$} (I) -- node[s,above left,pos=0.25] {$s$} (M);
+      \draw (F) -- node[s,above left] {$s$} (G) -- (H) -- node[s,left] {$s$} (K) -- (G) -- node[s,above] {$s$} (J) -- node[s,left] {$s$} (F);
+    \end{tikzpicture}
+\end{document}
