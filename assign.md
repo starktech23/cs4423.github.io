@@ -4,7 +4,7 @@ title: Assignments
 permalink: /assign/
 ---
 
-**Assignment 1.** ([pdf](/assets/assign1.pdf)). Deadline: Thursday, February 16, 5pm.
+**Assignment 1.** ([pdf](/assets/assign1.pdf)). Deadline: Wednesday, February 22, 5pm.
 
 <!--
 **Assignment 2.** ([pdf](/assets/assign2.pdf)). Deadline: Thursday, March 2, 5pm.
