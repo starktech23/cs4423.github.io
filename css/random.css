@@ -1,0 +1,15 @@
+svg {
+  border: solid 1px black;
+  margin: 1em 5%;
+}
+
+.node {
+  fill: red;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.link {
+  stroke: black;
+  stroke-width: 2px;
+}
