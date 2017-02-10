@@ -67,21 +67,24 @@ var update = function() {
 
     // colors: BFS
     var queue = [src];
-    var k = 0;
-    while (k < queue.length) {
-        var x = queue[k++];
+    while (queue.length > 0) {
+        var x = queue.pop();
         nodes[x].color = nodes[tar].color;
         for (var j = 0; j < links.length; j++) {
             if (links[j].source.index === x) {
                 var y = links[j].target.index;
-		if (queue.indexOf(y) === -1) {
-		    queue.push(y)
+		if (nodes[y].color != nodes[x].color) {
+		    if (queue.indexOf(y) === -1) {
+			queue.push(y)
+		    }
 		}
 	    }
 	    if (links[j].target.index === x) {
 		var y = links[j].source.index;
-		if (queue.indexOf(y) === -1) {
-		    queue.push(y)
+		if (nodes[y].color != nodes[x].color) {
+		    if (queue.indexOf(y) === -1) {
+			queue.push(y)
+		    }
 		}
 	    }
 	}
