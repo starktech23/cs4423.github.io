@@ -11,11 +11,12 @@ var svg = d3.select("#random").insert("svg", "div#count")
 var nodes = [];
 for (var j = 0; j < nrNodes; j++) {
     nodes[j] = {
-        radius: 3,
-        color: Math.floor(Math.random() * 20)
+        color: Math.floor(Math.random() * 20),
+	friends: []
     };
 }
 
+// list all possible links ...
 var allLinks = [];
 for (var j = 0; j < nrNodes; j++) {
     for (var k = 0; k < j; k++) {
@@ -23,6 +24,7 @@ for (var j = 0; j < nrNodes; j++) {
     }
 }
 
+// ... and shuffle with Knuth shuffle
 function shuffle(list) {
     for (j = list.length; j > 1; j--) {
 	var k = Math.floor(Math.random() * j);
@@ -41,7 +43,7 @@ var links = [];
 var force = d3.layout.force()
     .size([width,height])
     .friction(0.2)
-    .charge(function(d) { return -200 -20 * (d.radius - 3); })
+    .charge(function(d) { return -200 -20 * d.friends.length; })
     .gravity(0.1)
     .linkDistance(10)
     .links(links)
@@ -51,45 +53,56 @@ var node = svg.selectAll(".node")
     .data(nodes)
     .enter()
     .append("circle")
-    .attr("r", function(d) { return d.radius; })
+    .attr("r", function(d) { return d.friends.length + 3; })
     .classed("node", true)
     .call(force.drag);
 
 var count = d3.select("#count");
+
+// connected component of node: BFS
+function component(node) {
+    var queue = [node];
+    var list = [node];
+    while (queue.length > 0) {
+	var x = queue.pop();
+	for (var j = 0; j < nodes[x].friends.length; j++) {
+	    var y = nodes[x].friends[j];
+	    if (list.indexOf(y) == -1) {
+		queue.push(y);
+		list.push(y);
+	    }
+	}
+    }
+    return list;
+}
 
 var update = function() {
     var newLink = allLinks.shift();
     var tar = newLink[0];
     var src = newLink[1];
 
-    nodes[src].radius += 1;
-    nodes[tar].radius += 1;
+    // colors: repaint the smaller component
+    var srcComponent = component(src);
+    var tarComponent = component(tar);
+    console.log("src: " + srcComponent);
+    console.log("tar: " + tarComponent);
 
-    // colors: BFS
-    var queue = [src];
-    while (queue.length > 0) {
-        var x = queue.pop();
-        nodes[x].color = nodes[tar].color;
-        for (var j = 0; j < links.length; j++) {
-            if (links[j].source.index === x) {
-                var y = links[j].target.index;
-		if (nodes[y].color != nodes[x].color) {
-		    if (queue.indexOf(y) === -1) {
-			queue.push(y)
-		    }
-		}
-	    }
-	    if (links[j].target.index === x) {
-		var y = links[j].source.index;
-		if (nodes[y].color != nodes[x].color) {
-		    if (queue.indexOf(y) === -1) {
-			queue.push(y)
-		    }
-		}
-	    }
-	}
+    if (srcComponent.length < tarComponent.length) {
+	console.log("repainting src");
+	var queue = srcComponent;
+	var color = nodes[tar].color;
+    }
+    else {
+	console.log("repainting tar");
+	var queue = tarComponent;
+	var color = nodes[src].color;
+    }
+    for (var j = 0; j < queue.length; j++) {
+        nodes[queue[j]].color = color;
     }
 
+    nodes[src].friends.push(tar);
+    nodes[tar].friends.push(src);
     links.push({ source: src, target: tar });
 
     var link = svg.selectAll(".link").data(links);
@@ -101,7 +114,7 @@ var update = function() {
 	node.attr("cx", function(d) { return d.x; })
 	    .attr("cy", function(d) { return d.y; })
 	    .style("fill", function(d) { return colors(d.color); })
-	    .attr("r", function(d) { return d.radius; });
+	    .attr("r", function(d) { return d.friends.length + 3; });
 	link.attr("x1", function(d) { return d.source.x; })
 	    .attr("y1", function(d) { return d.source.y; })
 	    .attr("x2", function(d) { return d.target.x; })
