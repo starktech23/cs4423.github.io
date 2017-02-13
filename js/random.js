@@ -43,7 +43,7 @@ var links = [];
 var force = d3.layout.force()
     .size([width,height])
     .friction(0.2)
-    .charge(function(d) { return -200 -20 * d.friends.length; })
+    .charge(function(d) { return -200 + 0 * d.friends.length; })
     .gravity(0.1)
     .linkDistance(10)
     .links(links)
@@ -76,6 +76,23 @@ function component(node) {
     return list;
 }
 
+// all components
+function components() {
+    var list = [];
+    for (var j = 0; j < nrNodes; j++) {
+	list.push(j);
+    }
+    var comps = [];
+    while (list.length > 0) {
+	var comp = component(list[0]);
+	comps.push(comp);
+        for (var j = 0; j < comp.length; j++) {
+            list.splice(list.indexOf(comp[j]), 1);
+	}
+    }
+    return comps;
+}
+
 var update = function() {
     var newLink = allLinks.shift();
     var tar = newLink[0];
@@ -84,16 +101,12 @@ var update = function() {
     // colors: repaint the smaller component
     var srcComponent = component(src);
     var tarComponent = component(tar);
-    console.log("src: " + srcComponent);
-    console.log("tar: " + tarComponent);
 
     if (srcComponent.length < tarComponent.length) {
-	console.log("repainting src");
 	var queue = srcComponent;
 	var color = nodes[tar].color;
     }
     else {
-	console.log("repainting tar");
 	var queue = tarComponent;
 	var color = nodes[src].color;
     }
@@ -123,8 +136,14 @@ var update = function() {
 
     force.start()
 
-    count.text(nrNodes + " nodes, " + links.length + " links.");
-    if (links.length > 2.5 * nrNodes) { clearInterval(loop); }
+    var nrComponents = components().length
+    if (nrComponents == 1) {
+	count.text(nrNodes + " nodes, " + nrComponents + " component, " + links.length + " links.");
+	clearInterval(loop);
+    }
+    else {
+	count.text(nrNodes + " nodes, " + nrComponents + " components, " + links.length + " links.");
+    }
 }
 
 var loop = setInterval(update, 1000);
