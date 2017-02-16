@@ -43,7 +43,7 @@ var links = [];
 var force = d3.layout.force()
     .size([width,height])
     .friction(0.2)
-    .charge(function(d) { return -200 + 0 * d.friends.length; })
+    .charge(function(d) { return -200 + d.friends.length; })
     .gravity(0.1)
     .linkDistance(10)
     .links(links)
