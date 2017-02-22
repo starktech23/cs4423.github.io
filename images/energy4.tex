@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+
+\usepackage{tikz}
+\tikzset{every node/.style={circle,draw,minimum size=6mm,inner sep=0pt}}
+
+\begin{document}
+    \begin{tikzpicture}[scale=1.2]
+      \node (A) at (-2,0) {$A$}; 
+      \node (B) at (2,0) {$B$}; 
+      \node (C) at (0,1.5) {$C$}; 
+      \node (D) at (0,-1.5) {$D$}; 
+
+      \draw[->,>=latex] (A) -- node[draw=none,fill=white] {$x$} (C);
+      \draw[->,>=latex] (D) -- node[draw=none,fill=white] {$x$} (B);
+      \draw[->,>=latex] (A) -- node[draw=none,fill=white] {$5$} (D);
+      \draw[->,>=latex] (C) -- node[draw=none,fill=white] {$5$} (B);
+      \draw[->,>=latex] (C) -- node[draw=none,fill=white] {$0$} (D);
+
+\path[thick,blue,->] (A) edge[bend left=-90] (B);
+
+\draw[thick,red,->,smooth] plot[tension=1] coordinates {(A.north east) (C) (D) (B.south west)};
+\draw[thick,red,->,smooth] plot[tension=0.6] coordinates {(A.north east) (C) (D) (B.south west)};
+\draw[thick,red,->,smooth] plot[tension=1.4] coordinates {(A.north east) (C) (D) (B.south west)};
+
+\node[draw=none] (Egy) at (0,-2) {$E = 21$};
+
+    \end{tikzpicture}
+\end{document}
