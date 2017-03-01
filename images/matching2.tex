@@ -1,0 +1,33 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\tikzset{every node/.style={draw=none,minimum size=6mm,inner sep=0pt}}
+
+\begin{document}
+    \begin{tikzpicture}[scale=1.2,baseline]
+      \node (1) at (0,1) {$1$};
+      \node (2) at (1,1) {$2$};
+      \node (v) at (0,-1) {$v$};
+      \node (w) at (1,-1) {$w$};
+
+\foreach \a/\b in {1/v,2/v,2/w}
+  \draw (\a) -- (\b);
+\foreach \a/\b in {2/v}
+  \draw[blue,very thick] (\a) -- (\b);
+    \end{tikzpicture}
+\quad $\leadsto$ \quad
+    \begin{tikzpicture}[scale=1.2,baseline]
+      \node (1) at (0,1) {$1$};
+      \node (2) at (1,1) {$2$};
+      \node (v) at (0,-1) {$v$};
+      \node (w) at (1,-1) {$w$};
+
+\foreach \a/\b in {1/v,2/v,2/w}
+  \draw (\a) -- (\b);
+\foreach \a/\b in {1/v,2/w}
+  \draw[blue,very thick] (\a) -- (\b);
+    \end{tikzpicture}
+\end{document}
