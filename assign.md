@@ -8,7 +8,6 @@ permalink: /assign/
 
 **Assignment 2.** ([pdf](/assets/assign2.pdf)). Deadline: Thursday, March 2, 5pm.
 
-<!--
 **Assignment 3.**  For 1 point each,
 do Exercises 2 and 3 of [Chapter 8] of the book,
 Exercise 5 of [Chapter 9],
@@ -16,6 +15,7 @@ and Exercises 6 and 10 of [Chapter 10] of the book.
 
 Deadline: Thursday, March 16, 5pm.
 
+<!--
 **Assignment 4.**  For 1 point each,
 do
 Exercise 1 of [Chapter 12] of the book,
