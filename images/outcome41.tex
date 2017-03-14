@@ -1,0 +1,19 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+
+\usepackage{tikz}
+\tikzset{every node/.style={circle,draw,minimum size=6mm,inner sep=0pt}}
+\tikzset{t/.style={rectangle}}
+
+\begin{document}
+    \begin{tikzpicture}[font=\sffamily]
+      \node[label={$\frac12$}] (A) at (0,0) {$A$}; 
+      \node[label={$\frac12$}] (B) at (2,0) {$B$}; 
+      \node[label={$\frac14$}] (C) at (4,0) {$C$}; 
+      \node[label={$\frac34$}] (D) at (6,0) {$D$}; 
+      \draw[very thick,red] (A) -- (B);
+      \draw (B) -- (C);
+      \draw[very thick,red] (C) -- (D);
+    \end{tikzpicture}
+\end{document}

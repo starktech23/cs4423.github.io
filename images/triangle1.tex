@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\usepackage[euler-digits]{eulervm}
+
+\usepackage{tikz}
+\tikzset{every node/.style={circle,draw,minimum size=6mm,inner sep=0pt}}
+\tikzset{t/.style={rectangle}}
+
+\begin{document}
+    \begin{tikzpicture}[font=\sffamily]
+      \node (A) at (-3.2,0) {$A$}; 
+      \node (B) at (180:1.2) {$B$}; 
+      \node (C) at (300:1.2) {$C$}; 
+      \node (D) at (60:1.2) {$D$}; 
+      \foreach \a/\b in {A/B,B/C,C/D,D/B}
+        \draw (\a) -- (\b);
+    \end{tikzpicture}
+\end{document}
