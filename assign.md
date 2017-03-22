@@ -15,7 +15,6 @@ and Exercises 6 and 10 of [Chapter 10] of the book.
 
 Deadline: Thursday, March 16, 5pm.
 
-<!--
 **Assignment 4.**  For 1 point each,
 do
 Exercise 1 of [Chapter 12] of the book,
@@ -23,7 +22,7 @@ Exercises 1 and 2 of [Chapter 13],
 and Exercises 2 and 4 of [Chapter 14] of the book.
 
 Deadline: Friday, March 31, 5pm.
--->
+
 
 [Chapter 8]: https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch08.pdf
 [Chapter 9]: https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch09.pdf
