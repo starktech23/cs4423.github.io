@@ -4,6 +4,7 @@ title: Assignments
 permalink: /assign/
 ---
 
+<!--
 **Assignment 1.** ([pdf](/assets/assign1.pdf)). Deadline: Wednesday, February 22, 5pm.
 
 **Assignment 2.** ([pdf](/assets/assign2.pdf)). Deadline: Thursday, March 2, 5pm.
@@ -30,6 +31,6 @@ Deadline: Friday, March 31, 5pm.
 [Chapter 12]: https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch12.pdf
 [Chapter 13]: https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch13.pdf
 [Chapter 14]: https://www.cs.cornell.edu/home/kleinber/networks-book/networks-book-ch14.pdf
-
+-->
 
 

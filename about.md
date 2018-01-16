@@ -41,6 +41,10 @@ Cambridge University Press 2010.
 *Networks: an Introduction*,
 Oxford University Press 2010.
 
+* Vito Latora, Vincenzo Nicosia and Giovanni Russo:
+*Complex Networks: Principles, Methods and Applications*
+Cambridge University Press 2017.
+
 * Ernesto Estrada and Philip A. Knight:
 *A first course in network theory*
 Oxford University Press 2015.
