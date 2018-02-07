@@ -19,7 +19,7 @@ markdown: kramdown
 future: true
 
 # Additional gems
-gems:
+plugins:
   - jekyll-sitemap
 
 # Default values
