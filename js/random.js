@@ -12,7 +12,7 @@ var nodes = [];
 for (var j = 0; j < nrNodes; j++) {
     nodes[j] = {
         color: Math.floor(Math.random() * 20),
-	friends: []
+        friends: []
     };
 }
 
@@ -20,19 +20,19 @@ for (var j = 0; j < nrNodes; j++) {
 var allLinks = [];
 for (var j = 0; j < nrNodes; j++) {
     for (var k = 0; k < j; k++) {
-	allLinks.push([k, j])
+        allLinks.push([k, j])
     }
 }
 
 // ... and shuffle with Knuth shuffle
 function shuffle(list) {
     for (j = list.length; j > 1; j--) {
-	var k = Math.floor(Math.random() * j);
-	if (k < (j-1)) {
-	    var h = list[j-1];
-	    list[j-1] = list[k];
-	    list[k] = h;
-	}
+        var k = Math.floor(Math.random() * j);
+        if (k < (j-1)) {
+            var h = list[j-1];
+            list[j-1] = list[k];
+            list[k] = h;
+        }
     }
 }
 
@@ -64,14 +64,14 @@ function component(node) {
     var queue = [node];
     var list = [node];
     while (queue.length > 0) {
-	var x = queue.pop();
-	for (var j = 0; j < nodes[x].friends.length; j++) {
-	    var y = nodes[x].friends[j];
-	    if (list.indexOf(y) == -1) {
-		queue.push(y);
-		list.push(y);
-	    }
-	}
+        var x = queue.pop();
+        for (var j = 0; j < nodes[x].friends.length; j++) {
+            var y = nodes[x].friends[j];
+            if (list.indexOf(y) == -1) {
+                queue.push(y);
+                list.push(y);
+            }
+        }
     }
     return list;
 }
@@ -80,15 +80,15 @@ function component(node) {
 function components() {
     var list = [];
     for (var j = 0; j < nrNodes; j++) {
-	list.push(j);
+        list.push(j);
     }
     var comps = [];
     while (list.length > 0) {
-	var comp = component(list[0]);
-	comps.push(comp);
+        var comp = component(list[0]);
+        comps.push(comp);
         for (var j = 0; j < comp.length; j++) {
             list.splice(list.indexOf(comp[j]), 1);
-	}
+        }
     }
     return comps;
 }
@@ -103,12 +103,12 @@ var update = function() {
     var tarComponent = component(tar);
 
     if (srcComponent.length < tarComponent.length) {
-	var queue = srcComponent;
-	var color = nodes[tar].color;
+        var queue = srcComponent;
+        var color = nodes[tar].color;
     }
     else {
-	var queue = tarComponent;
-	var color = nodes[src].color;
+        var queue = tarComponent;
+        var color = nodes[src].color;
     }
     for (var j = 0; j < queue.length; j++) {
         nodes[queue[j]].color = color;
@@ -120,29 +120,29 @@ var update = function() {
 
     var link = svg.selectAll(".link").data(links);
     link.enter()
-	.insert("line", "circle")
-	.classed("link", true);
+        .insert("line", "circle")
+        .classed("link", true);
 
     force.on("tick", function(e) {
-	node.attr("cx", function(d) { return d.x; })
-	    .attr("cy", function(d) { return d.y; })
-	    .style("fill", function(d) { return colors(d.color); })
-	    .attr("r", function(d) { return d.friends.length + 3; });
-	link.attr("x1", function(d) { return d.source.x; })
-	    .attr("y1", function(d) { return d.source.y; })
-	    .attr("x2", function(d) { return d.target.x; })
-	    .attr("y2", function(d) { return d.target.y; });
+        node.attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; })
+            .style("fill", function(d) { return colors(d.color); })
+            .attr("r", function(d) { return d.friends.length + 3; });
+        link.attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
     });
 
     force.start()
 
     var nrComponents = components().length
     if (nrComponents == 1) {
-	count.text(nrNodes + " nodes, " + nrComponents + " component, " + links.length + " links.");
-	clearInterval(loop);
+        count.text(nrNodes + " nodes, " + nrComponents + " component, " + links.length + " links.");
+        clearInterval(loop);
     }
     else {
-	count.text(nrNodes + " nodes, " + nrComponents + " components, " + links.length + " links.");
+        count.text(nrNodes + " nodes, " + nrComponents + " components, " + links.length + " links.");
     }
 }
 
