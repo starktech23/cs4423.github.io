@@ -6,9 +6,9 @@ permalink: /assign/
 
 **Assignment 1.** ([pdf](/assets/assign1.pdf)). Deadline: Wednesday, February 21, 5pm.
 
-<!--
-**Assignment 2.** ([pdf](/assets/assign2.pdf)). Deadline: Thursday, March 2, 5pm.
+**Assignment 2.** ([pdf](/assets/assign2.pdf)). Deadline: Thursday, March 1, 5pm.
 
+<!--
 **Assignment 3.**  For 1 point each,
 do Exercises 2 and 3 of [Chapter 8] of the book,
 Exercise 5 of [Chapter 9],
